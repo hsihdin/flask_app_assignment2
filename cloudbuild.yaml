@@ -6,11 +6,7 @@ steps:
   args: ['push', 'us-central1-docker.pkg.dev/peaceful-fact-418603/adiyodi-assignment2/flask-app/flask-img:latest']
 - name: 'gcr.io/cloud-builders/gcloud'
 - name: 'gcr.io/cloud-builders/gcloud'
-  args:
-    - 'ssh'
-    - '35.202.12.199'  # Replace with your EC2 instance IP
-    - 'sudo docker pull us-central1-docker.pkg.dev/peaceful-fact-418603/adiyodi-assignment2/flask-app/flask-img:latest'
-    - 'sudo docker run -d -p 5000:5000 us-central1-docker.pkg.dev/peaceful-fact-418603/adiyodi-assignment2/flask-app/flask-img:latest'
+  args: ['compute', 'instances', 'reset', 'example-instance', '--zone', 'northamerica-northeast1-a']
 options:
   logging: CLOUD_LOGGING_ONLY
   default_logs_bucket_behavior: REGIONAL_USER_OWNED_BUCKET
