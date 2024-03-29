@@ -11,7 +11,7 @@ def after_request(response):
 
 @app.route('/')
 def hello_world():
-    return 'Hello, Cloud. Testing CICD 1'
+    return 'Hello, Cloud. Testing CICD test'
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
